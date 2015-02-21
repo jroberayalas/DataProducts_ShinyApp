@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the server logic for a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\nlibrary(forecast)\n\nshinyServer(function(input, output) {\n  \n    model <- reactive({\n        # create model\n        fit <- auto.arima(window(co2, start = input$year))\n    })\n    \n  output$predictionPlot <- renderPlot({\n\n    # draw the histogram with the specified number of bins\n    plot(forecast(model(), h = input$horizon),\n         xlab = \"Year\",\n         ylab = \"CO2 Concentration [ppm]\",\n         main = \"Mauna Loa Atmospheric CO2 Concentration\")\n    legend(x = \"topleft\",\n           legend = c(\"Time Series\", \"Prediction\"),\n           lty = c(1, 1),\n           lwd = c(1, 2),\n           col = c(\"black\", \"blue\"))\n\n  })\n\n})\n",
+    "created" : 1424539157694.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3362563958",
+    "id" : "DC1D39ED",
+    "lastKnownWriteTime" : 1424544599,
+    "path" : "~/Desktop/Academico/Coursera/Data Science Specialization/09 Data Products/Project/shinyapp/server.R",
+    "project_path" : "server.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

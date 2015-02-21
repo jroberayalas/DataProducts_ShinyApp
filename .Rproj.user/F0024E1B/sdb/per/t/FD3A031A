@@ -1,0 +1,16 @@
+{
+    "contents" : "\n# This is the user-interface definition of a Shiny web application.\n# You can find out more about building applications with Shiny here:\n#\n# http://shiny.rstudio.com\n#\n\nlibrary(shiny)\n\nshinyUI(fluidPage(\n\n  # Application title\n  titlePanel(\"Mauna Loa Atmospheric CO2 Concentration Data\"),\n\n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n        h3(\"Mode of Use\"),\n        p(\"The following is a simple shiny app that allows the user to visualize the Mauna Loa \n          Atmospheric CO2 Concentration from 1959 to 1997.\"),\n        sliderInput(\"year\", \n                    label = h3(\"Year\"),\n                    min = 1959, \n                    max = 1996, \n                    value = 1959,\n                    step = 1),\n        numericInput(\"horizon\", \n                     label = h3(\"Horizon\"), \n                     value = 1,\n                     min = 1)\n    ),\n\n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"predictionPlot\")\n    )\n  )\n))\n",
+    "created" : 1424539157211.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3801165252",
+    "id" : "FD3A031A",
+    "lastKnownWriteTime" : 1424544595,
+    "path" : "~/Desktop/Academico/Coursera/Data Science Specialization/09 Data Products/Project/shinyapp/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}
