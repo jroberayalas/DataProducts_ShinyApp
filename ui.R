@@ -35,7 +35,7 @@ shinyUI(fluidPage(
                      value = 20),
         helpText("This parameter establishes how many years into the future the model
                  shall be used to make predictions. Everytime this parameter is changed,
-                 the plot is updated.")
+                 the plot is updated. NOTE: Minimum value is 1.")
     
     ),
 
