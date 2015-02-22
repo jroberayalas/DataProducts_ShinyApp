@@ -6,6 +6,7 @@
 #
 
 library(shiny)
+library(RcppArmadillo)
 library(forecast)
 
 shinyServer(function(input, output) {
